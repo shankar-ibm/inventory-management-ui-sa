@@ -51,6 +51,12 @@ class StockItemList extends Component {
         "manufacturer": "Sony",
       }
     ];
+
+    async componentDidMount() {
+    this.setState({
+      data: await this.props.stockService.listStockItems()
+    });
+  }
 }
 
 export default StockItemList;
